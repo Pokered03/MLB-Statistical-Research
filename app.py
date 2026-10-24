@@ -106,7 +106,7 @@ try:
         if h2h:st.dataframe([{k:g[k] for k in ('date','away_name','away_score','home_name','home_score','venue')} for g in h2h],hide_index=True,width='stretch')
         else:st.caption('No head-to-head history in the independently stored seasons.')
     with st.expander('Availability, starters, weather & advanced-data limitations'):
-        st.write('Current injury status and starting goaltenders are not inferred. Observed player roles and official probable pitchers, when present below, are descriptive context. Player-role changes, rest, starters and weather are not calibrated model adjustments in this version.')
+        st.write('Injury status is not inferred. Official probable pitchers, when present below, are timestamped descriptive context. Starter assignments can change; pitcher roles, rest and weather are not calibrated model adjustments in this version.')
         if SPORT in ('nba','cbb'):
             for tid in (a,b):
                 for context in store.team_context(season,tid):
@@ -127,13 +127,13 @@ try:
                     st.write(side.title()+': '+pitcher['name']+' · '+pitcher['status'])
                     if pitcher.get('season_stats'):st.dataframe([pitcher['season_stats']],hide_index=True,width='stretch')
                 st.caption('Probable assignments can change. These are not confirmed starters; no starting-pitcher effect is applied to model probabilities.')
-        st.write('Unavailable metrics remain N/A. Published xG and recorded player roles are explicitly sourced; no proprietary grades, wRC+, xFIP, or tracking statistics are replaced by unrelated numbers.')
+        st.write('Unavailable baseball metrics remain N/A. No proprietary grades, wRC+, xFIP, bullpen workload or Statcast values are replaced by unrelated numbers.')
     st.subheader('Research assumptions')
     x,y,z=st.columns([1,1,2])
     spread_enabled=x.checkbox('Supply spread')
     spread=x.number_input('Team B spread (negative = favorite)',value=0.,step=.5,disabled=not spread_enabled)
     total_enabled=y.checkbox('Supply total')
-    total=y.number_input('Combined score / goals line',min_value=0.,value=0.,step=.5,disabled=not total_enabled)
+    total=y.number_input('Combined runs line',min_value=0.,value=0.,step=.5,disabled=not total_enabled)
     z.caption('Manual lines only. No sportsbook API calls. Spread and total confidence stay on PASS unless their historical-line validation and confidence-category support both pass.')
     m=model(season,rev)
     eligible=False
@@ -147,7 +147,7 @@ try:
     st.markdown(confidence_cards(result,names[a],names[b]),unsafe_allow_html=True)
     st.caption(result.get('reason','Insufficient data.'))
     if result.get('win_probability') is not None:
-        st.caption('Win estimates are conditional on a decisive result; NFL draws are excluded from calibration. Model reliability is reported by held-out Brier score and calibration error, not by the separation score.')
+        st.caption('Model reliability is reported by held-out Brier score and calibration error, not by the separation score. These team-scoring estimates do not include calibrated starting-pitcher or bullpen effects.')
     if result.get('margin_interval'):st.caption(f'80% empirical scoring interval: Team B margin {result["margin_interval"][0]:+.1f} to {result["margin_interval"][1]:+.1f}; total {result["total_interval"][0]:.1f} to {result["total_interval"][1]:.1f}. Exchangeability is assumed; not a guarantee.')
     with st.expander('How the assessment is derived'):
         st.write('A regularized attack/defense model adjusts scoring for the actual opponents faced and home court/field. Baseball and hockey use a Poisson link; football and basketball use a continuous scoring model. This is a baseline scoring model; it does not use advanced player or tracking inputs.')
