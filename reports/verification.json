@@ -55,8 +55,19 @@
     "target_peak_rss_mib": 650,
     "hosting_environment": false
   },
-  "deployment_tested": false,
+  "deployment_tested": true,
   "mobile_browser_tested": false,
-  "scheduled_refresh_active": false,
-  "github_published": false
+  "scheduled_refresh_active": true,
+  "github_published": true,
+  "hosted_checks": {
+    "level": "initial functional/resource checks; not sustained load or mobile QA",
+    "process_peak_rss_mib": 171.2,
+    "exposed_memory_limit_mib": 3072,
+    "restart_recovery_once": "passed",
+    "final_refresh": "https://github.com/Pokered03/MLB-Statistical-Research/actions/runs/40117889349",
+    "current_coverage": {
+      "teams": 30,
+      "completed_games_with_both_boxes": 2465
+    }
+  }
 }
