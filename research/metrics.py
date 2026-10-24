@@ -45,8 +45,8 @@ def per(key,label,section,direction=1,primitive=None,note=''):
 def ratio(key,label,section,num,den,scale=100,direction=1,note=''):
     return Metric(key,label,section,direction,tuple(num),tuple(den),scale,'%' if scale==100 else '',note)
 
-BASE=[per('points','Points scored / game','Offense'),per('allowed','Points allowed / game','Defense',-1),
-      per('margin','Scoring margin / game','Situational'),per('rest','Days between game dates','Situational',0,note='Calendar days, including the game day; 1 means back-to-back.'),
+BASE=[per('points','Runs scored / game','Offense'),per('allowed','Runs allowed / game','Defense',-1),
+      per('margin','Run margin / game','Situational'),per('rest','Days between game dates','Situational',0,note='Calendar days, including the game day; 1 means back-to-back.'),
       per('win','Win rate','Situational')]
 FOOTBALL=[ratio('line_yards_rate','Source line yards / rush','Offense',[('line_yards',1)],[('line_rush_n',1)],1,note='Publisher rushing-line proxy; not a proprietary offensive-line grade.'),ratio('opp_line_yards_rate','Opponent line yards / rush','Defense',[('opp_line_yards',1)],[('opp_line_rush_n',1)],1,-1),ratio('recorded_disruption','Recorded QB disruption allowed','Offense',[('qb_disruption',1)],[('dropbacks',1)],100,-1,note='Recorded hurry-or-sack flags; not complete tracking pressure rate.'),ratio('opp_recorded_disruption','Recorded defensive QB disruption','Defense',[('opp_qb_disruption',1)],[('opp_dropbacks',1)],100,1,note='Provider-recorded hurries or sacks divided by observed dropbacks.'),per('pass_yards','Passing yards / game','Offense'),per('rush_yards','Rushing yards / game','Offense'),
  per('pass_td','Pass TD / game','Offense'),per('rush_td','Rush TD / game','Offense'),

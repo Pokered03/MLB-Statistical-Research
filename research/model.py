@@ -131,8 +131,11 @@ def backtest(games):
     report['margin_interval_80_coverage']=float(np.mean([report['margin_q10']<=r['actual_margin']-r['margin']<=report['margin_q90'] for r in test]))
     from .market_validation import evaluate
     report['market_validation']=evaluate(cal,test)
-    for name,subset in [('early',[r for r in test if r['team_games']<10]),('late',[r for r in test if r['team_games']>=10])]:
-        report[name]={'n':len(subset),'margin_mae':float(np.mean([abs(r['actual_margin']-r['margin']) for r in subset])) if subset else None}
+    early_cutoff=30  # MLB: first month, after the 10-game model eligibility minimum
+    report['season_phase_definition']={'early':'10–29 prior fitted team games; minimum of the matchup teams','late':'30+ prior fitted team games; minimum of the matchup teams','cutoff_prior_games':early_cutoff}
+    for name in ('early','late'):
+        indices=[i for i,r in enumerate(test) if (r['team_games']<early_cutoff)==(name=='early')]
+        report[name]=validation_metrics([test[i] for i in indices],[p[i] for i in indices]) if indices else {'n':0,'margin_mae':None,'total_mae':None,'brier':None,'ece':None}
     return report,oos
 
 def assessment(m,validation,home,away,neutral=False,spread=None,total=None,eligible=True):
