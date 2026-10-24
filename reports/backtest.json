@@ -1,46 +1,46 @@
 {
   "n": 3990,
-  "brier": 0.24569405238862707,
+  "brier": 0.24569405248656684,
   "baseline_brier": 0.25,
   "accuracy": 0.5556390977443609,
-  "margin_mae": 3.5286365645247124,
-  "total_mae": 3.621716479554944,
-  "ece": 0.011017307068242835,
+  "margin_mae": 3.5286365590337736,
+  "total_mae": 3.6217164848898875,
+  "ece": 0.011017305153117394,
   "calibration_bins": [
     {
       "lower": 0.2,
       "n": 3,
-      "predicted": 0.26887239018709136,
+      "predicted": 0.2688723945398829,
       "observed": 0.3333333333333333
     },
     {
       "lower": 0.3,
       "n": 81,
-      "predicted": 0.3752644690571909,
+      "predicted": 0.3752644567800412,
       "observed": 0.30864197530864196
     },
     {
       "lower": 0.4,
       "n": 1064,
-      "predicted": 0.46904454182434885,
+      "predicted": 0.46904454548229707,
       "observed": 0.46616541353383456
     },
     {
       "lower": 0.5,
       "n": 2366,
-      "predicted": 0.5444196914680531,
+      "predicted": 0.5444196935855469,
       "observed": 0.55156382079459
     },
     {
       "lower": 0.6,
       "n": 463,
-      "predicted": 0.6308693153143884,
+      "predicted": 0.6308693037716013,
       "observed": 0.593952483801296
     },
     {
       "lower": 0.7,
       "n": 13,
-      "predicted": 0.7453573153105748,
+      "predicted": 0.7453573285105232,
       "observed": 0.8461538461538461
     }
   ],
@@ -54,16 +54,16 @@
   "test_through": "2026-10-23",
   "oos_games": 8877,
   "calibrator": {
-    "intercept": 0.11263050188570563,
-    "slope": 0.41340355506632465
+    "intercept": 0.11263050509777285,
+    "slope": 0.413403548031966
   },
-  "margin_sd": 4.450180990636218,
-  "margin_q10": -5.5115304200693735,
-  "margin_q90": 5.287740602889112,
-  "total_q10": -5.302693143380343,
-  "total_q90": 5.910349270072204,
-  "baseline_margin_mae": 3.56932637215854,
-  "baseline_total_mae": 3.5835824846952327,
+  "margin_sd": 4.4501809846625004,
+  "margin_q10": -5.5115304200920106,
+  "margin_q90": 5.287740602889477,
+  "total_q10": -5.302693145709736,
+  "total_q90": 5.910349270134436,
+  "baseline_margin_mae": 3.5693263724404685,
+  "baseline_total_mae": 3.5835824850521076,
   "reason": "Gate requires >=200 calibration and test games, ECE <=0.10, Brier better than 50%, successful calibration. Thresholds are engineering safeguards, not proof of profitability.",
   "exclusions": "Draws excluded from win calibration; all scoring includes overtime/shootout scores as reported. No historical market prices are available; spread/total category reliability is unvalidated.",
   "market_validation": {
@@ -84,13 +84,100 @@
       "line_range": null
     }
   },
+  "season_phase_definition": {
+    "early": "10\u201329 prior fitted team games; minimum of the matchup teams",
+    "late": "30+ prior fitted team games; minimum of the matchup teams",
+    "cutoff_prior_games": 30
+  },
   "early": {
-    "n": 0,
-    "margin_mae": null
+    "n": 292,
+    "brier": 0.2451562821837813,
+    "baseline_brier": 0.25,
+    "accuracy": 0.5616438356164384,
+    "margin_mae": 3.5511398379419057,
+    "total_mae": 3.7454196088267095,
+    "ece": 0.030210684128653662,
+    "calibration_bins": [
+      {
+        "lower": 0.3,
+        "n": 13,
+        "predicted": 0.36616131705221083,
+        "observed": 0.38461538461538464
+      },
+      {
+        "lower": 0.4,
+        "n": 79,
+        "predicted": 0.4601115228954504,
+        "observed": 0.4430379746835443
+      },
+      {
+        "lower": 0.5,
+        "n": 128,
+        "predicted": 0.5553135587064317,
+        "observed": 0.5625
+      },
+      {
+        "lower": 0.6,
+        "n": 66,
+        "predicted": 0.6351598502313787,
+        "observed": 0.5454545454545454
+      },
+      {
+        "lower": 0.7,
+        "n": 6,
+        "predicted": 0.7320653296095493,
+        "observed": 0.6666666666666666
+      }
+    ],
+    "margin_interval_80_coverage": null
   },
   "late": {
-    "n": 3990,
-    "margin_mae": 3.5286365645247124
+    "n": 3698,
+    "brier": 0.24573651569057262,
+    "baseline_brier": 0.25,
+    "accuracy": 0.555164954029205,
+    "margin_mae": 3.526859664106469,
+    "total_mae": 3.6119486881917937,
+    "ece": 0.009843731072830916,
+    "calibration_bins": [
+      {
+        "lower": 0.2,
+        "n": 3,
+        "predicted": 0.2688723945398829,
+        "observed": 0.3333333333333333
+      },
+      {
+        "lower": 0.3,
+        "n": 68,
+        "predicted": 0.3770047629044794,
+        "observed": 0.29411764705882354
+      },
+      {
+        "lower": 0.4,
+        "n": 985,
+        "predicted": 0.4697610011009376,
+        "observed": 0.46802030456852795
+      },
+      {
+        "lower": 0.5,
+        "n": 2238,
+        "predicted": 0.5437966307010638,
+        "observed": 0.5509383378016086
+      },
+      {
+        "lower": 0.6,
+        "n": 397,
+        "predicted": 0.6301560139319405,
+        "observed": 0.6020151133501259
+      },
+      {
+        "lower": 0.7,
+        "n": 7,
+        "predicted": 0.7567504704256435,
+        "observed": 1.0
+      }
+    ],
+    "margin_interval_80_coverage": null
   },
-  "generated_at": "2026-10-24T17:44:49.306083+00:00"
+  "generated_at": "2026-10-24T17:50:07.934485+00:00"
 }
