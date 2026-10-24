@@ -1,6 +1,6 @@
 # MLB Statistical Research Dashboard
 
-Status: **independently implemented and locally tested development build; not deployed; not complete.**
+Status: **live development build; initial hosted checks passed; full specification not complete.**
 
 This repository is a single-sport, standalone Streamlit research application. It has no runtime dependency on another project, no imports from another dashboard, and no access to the existing Multi-Sport Value Engine. Every project has its own SQLite file, worker, model, caches, dependency specification and optional refresh workflow.
 
@@ -70,14 +70,16 @@ The local target is cold AppTest render under 10 seconds, matchup switching unde
 
 The user approved public publication of [Pokered03/MLB-Statistical-Research](https://github.com/Pokered03/MLB-Statistical-Research). This repository is independent from all other sports dashboards and the existing Multi-Sport Value Engine. See project.json and PUBLICATION_CHECKPOINT.md for verified publication/deployment status.
 
-Use Streamlit Community Cloud with branch `main`, entry file `app.py`, and Python 3.12. The root `requirements.txt` and `.streamlit/config.toml` are included. The supplied Dockerfile is an alternative for an existing approved hosting account. Neither platform has been provisioned for this project. Do not pay for hosting without explicit approval.
+Use Streamlit Community Cloud with branch `main`, entry file `app.py`, and Python 3.12. The root `requirements.txt` and `.streamlit/config.toml` are included. The supplied Dockerfile is an alternative for an existing approved hosting account. The free Streamlit Community Cloud deployment is live at [mlb-statistical-research.streamlit.app](https://mlb-statistical-research.streamlit.app/). See HOSTED_VALIDATION.md for actual checks and limitations. No alternative hosting account is provisioned. Do not pay for hosting without explicit approval.
 
 Verify the free account’s app count, privacy rules, sleeping behavior, actual memory allocation and execution quota before deployment. After deployment, test scheduled selection, manual comparisons, historical seasons, missing-data cases, mobile layout, repeated switching, concurrent sessions, restarts and actual hosting memory. Record the resulting independent URL; do not invent one.
 
-## Automatic schedule: prepared, OFF until free quota verified
+## Automatic schedule: enabled for public free runners
 
-`.github/workflows/refresh.yml` is independent for this repository. Its scheduled and manual jobs are guarded by `ENABLE_FREE_REFRESH == 'true'`; jobs also require a public repository, use a standard free ubuntu-latest runner and create no cache/artifact storage. Updates stay off until the variable is enabled. The prepared cron is listed in that file in UTC. It is daily, not a real-time end-of-game service. More frequent updates need a verified free scheduler/quota and source freshness checks.
+`.github/workflows/refresh.yml` is independent for this repository. Its scheduled and manual jobs are guarded by `ENABLE_FREE_REFRESH == 'true'`; jobs also require a public repository, use a standard free ubuntu-latest runner and create no cache/artifact storage. ENABLE_FREE_REFRESH=true is enabled. The first hosted refresh succeeded. The prepared cron is listed in that file in UTC. It is daily, not a real-time end-of-game service. More frequent updates need a verified free scheduler/quota and source freshness checks.
 
 The workflow commits the small prepared database and validation summary; Streamlit can redeploy from that commit. For long-term heavy use, monitor Git history growth and migrate the database to an independently managed approved object store. That storage integration is not configured.
 
 Do not mark this application complete until repository publication, automated refresh, real browser checks and actual hosted resource-limit testing have all passed.
+
+After changing imported engine modules, reboot this individual Streamlit deployment and verify that new code is loaded. Database-only daily refreshes were observed through revision-keyed caches without reboot. One controlled hosted reboot recovered successfully. See HOSTED_VALIDATION.md for exact scope; sustained crash/load testing and real mobile verification remain outstanding.
