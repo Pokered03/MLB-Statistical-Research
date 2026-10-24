@@ -1,0 +1,9 @@
+{
+  "sport": "mlb",
+  "operation": "Active-season cached free-data refresh plus full chronological validation",
+  "seconds": 4.523951330999807,
+  "worker_peak_rss_mib": 238.39453125,
+  "exit_code": 0,
+  "target_peak_rss_mib": 650,
+  "hosting_environment": false
+}

@@ -1,0 +1,23 @@
+{
+  "sport": "mlb",
+  "database_bytes": 8609792,
+  "seasons": [
+    {
+      "season": 2023,
+      "games": 2430
+    },
+    {
+      "season": 2024,
+      "games": 2429
+    },
+    {
+      "season": 2025,
+      "games": 2430
+    },
+    {
+      "season": 2026,
+      "games": 2472
+    }
+  ],
+  "integrity": "ok"
+}

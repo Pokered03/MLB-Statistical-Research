@@ -1,0 +1,10 @@
+{
+  "season": 2026,
+  "completed_games": 2465,
+  "completed_games_with_both_boxes": 2465,
+  "teams_with_boxes": 30,
+  "source": "Official MLB Stats API team-game logs; regular season and F/D/L/W postseason",
+  "validation": "Both teams batting runs and pitching runs reconcile to final scores; exact positive integer pitching outs; no negative/impossible observed counts; missing values remain absent",
+  "sqlite_integrity": "ok",
+  "foreign_keys": "ok"
+}
