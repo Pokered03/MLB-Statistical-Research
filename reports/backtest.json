@@ -1,69 +1,69 @@
 {
-  "n": 3993,
-  "brier": 0.24568033675557868,
+  "n": 3994,
+  "brier": 0.24567851331940754,
   "baseline_brier": 0.25,
-  "accuracy": 0.5557225144002004,
-  "margin_mae": 3.5285375588398806,
-  "total_mae": 3.6201614607332373,
-  "ece": 0.011110001299865894,
+  "accuracy": 0.5558337506259389,
+  "margin_mae": 3.5282282367673616,
+  "total_mae": 3.6200899979936625,
+  "ece": 0.011229465911333255,
   "calibration_bins": [
     {
       "lower": 0.2,
       "n": 3,
-      "predicted": 0.26887239018709136,
+      "predicted": 0.2688723945398829,
       "observed": 0.3333333333333333
     },
     {
       "lower": 0.3,
       "n": 81,
-      "predicted": 0.3752644690571909,
+      "predicted": 0.3752644567800412,
       "observed": 0.30864197530864196
     },
     {
       "lower": 0.4,
-      "n": 1066,
-      "predicted": 0.4690805920206114,
-      "observed": 0.46622889305816134
+      "n": 1067,
+      "predicted": 0.4690985700908197,
+      "observed": 0.46579194001874413
     },
     {
       "lower": 0.5,
       "n": 2367,
-      "predicted": 0.5444319090064228,
+      "predicted": 0.5444319111230325,
       "observed": 0.5517532741867343
     },
     {
       "lower": 0.6,
       "n": 463,
-      "predicted": 0.6308693153143884,
+      "predicted": 0.6308693037716013,
       "observed": 0.593952483801296
     },
     {
       "lower": 0.7,
       "n": 13,
-      "predicted": 0.7453573153105748,
+      "predicted": 0.7453573285105232,
       "observed": 0.8461538461538461
     }
   ],
-  "margin_interval_80_coverage": 0.7873779113448535,
+  "margin_interval_80_coverage": 0.7874311467200801,
   "version": "adjusted-score-v1",
   "status": "tested",
   "gate": true,
   "calibration_n": 4887,
   "calibration_through": "2025-05-17",
   "test_from": "2025-05-18",
-  "test_through": "2026-10-27",
-  "oos_games": 8880,
+  "test_through": "2026-10-28",
+  "oos_games": 8881,
   "calibrator": {
-    "intercept": 0.11263050188570563,
-    "slope": 0.41340355506632465
+    "intercept": 0.11263050509777285,
+    "slope": 0.413403548031966
   },
-  "margin_sd": 4.450180990636218,
-  "margin_q10": -5.5115304200693735,
-  "margin_q90": 5.287740602889112,
-  "total_q10": -5.302693143380343,
-  "total_q90": 5.910349270072204,
-  "baseline_margin_mae": 3.5693858529472893,
-  "baseline_total_mae": 3.581925288788027,
+  "margin_sd": 4.4501809846625004,
+  "margin_q10": -5.5115304200920106,
+  "margin_q90": 5.287740602889477,
+  "total_q10": -5.302693145709736,
+  "total_q90": 5.910349270134436,
+  "baseline_margin_mae": 3.5692569419222506,
+  "baseline_total_mae": 3.5819965236249147,
   "reason": "Gate requires >=200 calibration and test games, ECE <=0.10, Brier better than 50%, successful calibration. Thresholds are engineering safeguards, not proof of profitability.",
   "exclusions": "Draws excluded from win calibration; all scoring includes overtime/shootout scores as reported. No historical market prices are available; spread/total category reliability is unvalidated.",
   "market_validation": {
@@ -91,93 +91,93 @@
   },
   "early": {
     "n": 292,
-    "brier": 0.2451562808286628,
+    "brier": 0.2451562821837813,
     "baseline_brier": 0.25,
     "accuracy": 0.5616438356164384,
-    "margin_mae": 3.551139912974654,
-    "total_mae": 3.7454195357615068,
-    "ece": 0.03021070217009424,
+    "margin_mae": 3.5511398379419057,
+    "total_mae": 3.7454196088267095,
+    "ece": 0.030210684128653662,
     "calibration_bins": [
       {
         "lower": 0.3,
         "n": 13,
-        "predicted": 0.3661614103069749,
+        "predicted": 0.36616131705221083,
         "observed": 0.38461538461538464
       },
       {
         "lower": 0.4,
         "n": 79,
-        "predicted": 0.46011149587982814,
+        "predicted": 0.4601115228954504,
         "observed": 0.4430379746835443
       },
       {
         "lower": 0.5,
         "n": 128,
-        "predicted": 0.5553135288531011,
+        "predicted": 0.5553135587064317,
         "observed": 0.5625
       },
       {
         "lower": 0.6,
         "n": 66,
-        "predicted": 0.6351599257322171,
+        "predicted": 0.6351598502313787,
         "observed": 0.5454545454545454
       },
       {
         "lower": 0.7,
         "n": 6,
-        "predicted": 0.73206529800373,
+        "predicted": 0.7320653296095493,
         "observed": 0.6666666666666666
       }
     ],
     "margin_interval_80_coverage": null
   },
   "late": {
-    "n": 3701,
-    "brier": 0.24572168350798596,
+    "n": 3702,
+    "brier": 0.24571970497029974,
     "baseline_brier": 0.25,
-    "accuracy": 0.5552553363955688,
-    "margin_mae": 3.526754287451782,
-    "total_mae": 3.610278899828548,
-    "ece": 0.009944689831061976,
+    "accuracy": 0.55537547271745,
+    "margin_mae": 3.5264210548270682,
+    "total_mae": 3.610204464130008,
+    "ece": 0.010073894326378995,
     "calibration_bins": [
       {
         "lower": 0.2,
         "n": 3,
-        "predicted": 0.26887239018709136,
+        "predicted": 0.2688723945398829,
         "observed": 0.3333333333333333
       },
       {
         "lower": 0.3,
         "n": 68,
-        "predicted": 0.3770047597006144,
+        "predicted": 0.3770047629044794,
         "observed": 0.29411764705882354
       },
       {
         "lower": 0.4,
-        "n": 987,
-        "predicted": 0.4697984832010794,
-        "observed": 0.46808510638297873
+        "n": 988,
+        "predicted": 0.4698171700183845,
+        "observed": 0.4676113360323887
       },
       {
         "lower": 0.5,
         "n": 2239,
-        "predicted": 0.5438098244417177,
+        "predicted": 0.543809824972664,
         "observed": 0.551138901295221
       },
       {
         "lower": 0.6,
         "n": 397,
-        "predicted": 0.6301560148419031,
+        "predicted": 0.6301560139319405,
         "observed": 0.6020151133501259
       },
       {
         "lower": 0.7,
         "n": 7,
-        "predicted": 0.7567504730021563,
+        "predicted": 0.7567504704256435,
         "observed": 1.0
       }
     ],
     "margin_interval_80_coverage": null
   },
-  "generated_at": "2026-10-28T11:11:17.128509+00:00"
+  "generated_at": "2026-10-29T11:11:25.608013+00:00"
 }
